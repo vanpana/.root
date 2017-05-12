@@ -33,6 +33,7 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.uploadButton = new System.Windows.Forms.Button();
             this.dueDateLabel = new System.Windows.Forms.Label();
+            this.openArchivePath = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // projectsummary
@@ -69,6 +70,7 @@
             this.uploadButton.TabIndex = 3;
             this.uploadButton.Text = "Upload!";
             this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
             // dueDateLabel
             // 
@@ -78,6 +80,10 @@
             this.dueDateLabel.Size = new System.Drawing.Size(54, 13);
             this.dueDateLabel.TabIndex = 4;
             this.dueDateLabel.Text = "Due: date";
+            // 
+            // openArchivePath
+            // 
+            this.openArchivePath.FileOk += new System.ComponentModel.CancelEventHandler(this.openArchivePath_FileOk);
             // 
             // archiveuploader
             // 
@@ -104,5 +110,6 @@
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.Label dueDateLabel;
+        private System.Windows.Forms.OpenFileDialog openArchivePath;
     }
 }

@@ -84,5 +84,25 @@ namespace root
             if (dateCompareResult > 0)
                 this.uploadButton.Enabled = false;
         }
+
+        private void uploadButton_Click(object sender, EventArgs e)
+        {
+            openArchivePath.ShowDialog();
+        }
+
+        private void openArchivePath_FileOk(object sender, CancelEventArgs e)
+        {
+            //MessageBox.Show(openArchivePath.FileName);
+            string archivePath = openArchivePath.FileName;
+            if (!Path.GetExtension(archivePath).Equals(".zip"))
+                MessageBox.Show("File is not a zip!");
+            else
+            {
+                if (File.Exists("data/project1.zip"))
+                    File.Delete("data/project1.zip");
+                File.Copy(openArchivePath.FileName, "data/project1.zip");
+                this.statusLabel.Text = "Status: Uplaoded";
+            }
+        }
     }
 }
