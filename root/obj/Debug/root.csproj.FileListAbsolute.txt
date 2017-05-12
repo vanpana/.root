@@ -8,3 +8,4 @@ C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.csproj.Gener
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.exe
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.pdb
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.archiveuploader.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Login.resources
