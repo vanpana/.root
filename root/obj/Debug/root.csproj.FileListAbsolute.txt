@@ -1,0 +1,10 @@
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\bin\Debug\root.exe.config
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\bin\Debug\root.exe
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\bin\Debug\root.pdb
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.csprojResolveAssemblyReference.cache
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Form1.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Properties.Resources.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.csproj.GenerateResource.Cache
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.exe
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.pdb
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.archiveuploader.resources

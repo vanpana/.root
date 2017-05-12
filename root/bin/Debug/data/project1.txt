@@ -1,0 +1,3 @@
+Implement a sorting algorithm
+For this project, you must implement a sorting algorithm, other than bubble sort. Use your imagination. The archive must be a zip file containing your source file and a documentation (any formats allowed).
+14.05.2017
