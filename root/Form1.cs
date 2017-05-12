@@ -21,8 +21,8 @@ namespace root
 
         private void button1_Click(object sender, EventArgs e)
         {
-            archiveuploader archiveu = new archiveuploader();
-            archiveu.Show();
+            Login log = new Login();
+            log.Show();
         }
     }
 }
