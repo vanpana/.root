@@ -107,17 +107,18 @@ namespace root
                     s.Close();
                 }
                 StreamWriter wr = new StreamWriter(fpath);
-                wr.Write(fileNameTextBox.Text + "\n");
-                wr.Write(codeNameTextBox.Text + "\n");
+                wr.Write(fileNameTextBox.Text + "\r\n");
+                wr.Write(codeNameTextBox.Text + "\r\n");
                 if(typeCheckedListBox.SelectedIndex == 1)
                 {
-                    wr.Write(textBox1.Text + "\n");
+                    wr.Write(textBox1.Text + "\r\n");
                 }
                 wr.Close();
                 // TODO
             }
             else
-                MessageBox.Show("Try a text file!"); 
+                MessageBox.Show("Try a text file!");
+            this.Close();
             
         }
 

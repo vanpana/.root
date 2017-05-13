@@ -54,8 +54,12 @@ namespace root
         {
             nod = n;
             InitializeComponent();
-
+            
             filePath = "data/keys/" + n.getKey().ToString() + ".txt";
+            if(!File.Exists(filePath))
+            {
+                filePath = "data/users/" + boardForm.username + "/keys/" + n.getKey().ToString() + ".txt";
+            }
             string[] parsed = parseFile(filePath);
 
             name = parsed[0];
@@ -123,6 +127,16 @@ namespace root
                 Lecture l = new Lecture();
                 l.codeName = codeName;
                 l.pathFile = "data/" + type + "/" + codeName + ".txt";
+                l.Show();
+            }
+
+            else if (type == "project")
+            {
+                archiveuploader au = new archiveuploader();
+                au.codeName = codeName;
+                au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
+                //au.pathFile = "data/" + type + "/" + codeName + ".txt";
+                au.Show();
             }
         }
     }

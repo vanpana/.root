@@ -65,6 +65,7 @@ namespace root
             string[] parsed = new string[3];
             try
             {
+                MessageBox.Show(pathFile);
                 parsed = parseFile(pathFile);
             }
             catch (Exception exc)
@@ -74,7 +75,7 @@ namespace root
             }
             
             this.Text = parsed[0];
-            this.projectsummary.Text = parsed[1];
+            this.projectsummary.Text = File.ReadAllText("data/project/" + parsed[1] + ".txt");// parsed[1];
             this.dueDateLabel.Text = "Due: " + parsed[2];
 
             if (File.Exists("data/users/" + boardForm.username + "/uploaded/" + codeName + ".zip"))
