@@ -1,0 +1,6 @@
+For this task, you'll give N command arguments and you have to print them backwards to the standard output.
+
+For example, if you have: ./myprogram i am awesome
+you'll print: awesome am i (just like Yoda lol)
+
+Upload only .zip archives!

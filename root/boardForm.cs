@@ -112,7 +112,8 @@ namespace root
             {
                 FileStream f = File.Create(path);
                 f.Close();
-                Tree t = new Tree(new Node(200, 10, -1, null, new List<Node>()), username);
+                Tree t = new Tree();
+                t.Load("data/keys/Defaul.txt");
                 t.Show();
                 t.Save(path);
                 

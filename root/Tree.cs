@@ -28,7 +28,7 @@ namespace root
         private Node m_root;
         private int addFlag = 0;
         private int keyFlag = 0;
-        int nodes = 0;
+        public int nodes = 0;
         private string username;
 
         public void TestInit()
@@ -225,6 +225,10 @@ namespace root
             //MessageBox.Show("add workded");
             MenuItem m = (MenuItem) sender;
             addFlag = 1;
+            NewNode NodeDiag = new NewNode(nodes);
+            NodeDiag.ShowDialog();
+
+
         }
 
 
@@ -280,6 +284,7 @@ namespace root
         private void readFromFile(string path)
         {
             nodeCreate = false;
+            nodes = 0;
             this.Invalidate();
 
 
@@ -306,6 +311,7 @@ namespace root
                         Node n = new Node(x, y, key, getNode(parent, m_root), new List<Node>());
                         n.setState(status);
                         addChild(parent, n);
+                        nodes++;
                         drawLineBetweenNodes(n, getNode(parent, m_root));
                         drawNode(getNode(parent, m_root));
                         drawNode(n);

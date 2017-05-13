@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace root
 {
     public partial class NewNode : Form
     {
+        int key;
+
         public NewNode()
         {
             InitializeComponent();
+        }
+
+        public NewNode(int k)
+        {
+            InitializeComponent();
+            key = k;
+            //MessageBox.Show(key.ToString());
         }
 
         private void browseButton_Click(object sender, EventArgs e)
@@ -86,7 +96,25 @@ namespace root
                         System.IO.File.Copy(path, "data/project/" + codeName + ".txt");
                         break;
                 }
-                //TODO Teo adaugare nod nou
+                if(!Directory.Exists("data/users/" + boardForm.username + "/keys"))
+                {
+                    Directory.CreateDirectory("data/users/" + boardForm.username + "/keys");
+                }
+                string fpath = "data/users/" + boardForm.username + "/keys/" + key.ToString() + ".txt";
+                if (!File.Exists(fpath))
+                {
+                    FileStream s = File.Create(fpath);
+                    s.Close();
+                }
+                StreamWriter wr = new StreamWriter(fpath);
+                wr.Write(fileNameTextBox.Text + "\n");
+                wr.Write(codeNameTextBox.Text + "\n");
+                if(typeCheckedListBox.SelectedIndex == 1)
+                {
+                    wr.Write(textBox1.Text + "\n");
+                }
+                wr.Close();
+                // TODO
             }
             else
                 MessageBox.Show("Try a text file!"); 

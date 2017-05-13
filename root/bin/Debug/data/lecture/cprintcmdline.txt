@@ -1,0 +1,21 @@
+Printing from the command line
+
+Sometimes, you will want to run a program from the command line. But how do you make it accept data that you give it to through the command line. To do this, you use command line arguments.
+
+How to use command line arguments
+
+There are two command line arguments: argc and argv. argc is knows how many arguments have been given through the command line. Since our program is the first argument, argc will greater or equal than 1. argv is an array which stores the arguments themselves. Here is an example.
+
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    printf("%s", argv[1]);
+    return 0;
+}
+
+Let's see how these lines work.
+
+int main(int argc, char *argv[]) - In the introductory course, we learned that main is a function. Functions can take arguments. In this case, main takes arguments from the command line. We have already established what argc and argv store. But what does int mean. int means a variable will store numbers without fractional components, both positive and negative. Don't worry about what char *argv[] means for now. Just remember what argv stores.
+printf("%s", argv[1]) - In this case, you only need to know that argv is an array of strings and that the [1] is the index of the array from which we want to print data. But we've established that the first argument is the name of the program. So why do we print the first index of argv. Well, arrays in C start from 0, not 1. So, index 1 actually refers to the second element of an array.
+
+If you compile and run the program from the command line, you will see that the input from the command line is printed.
