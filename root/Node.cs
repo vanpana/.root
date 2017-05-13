@@ -12,6 +12,7 @@ namespace root
         private int m_key;
         private Node m_parent;
         private List<Node> m_children = new List<Node>(100);
+        private int radius = 20;
 
         public Node(int a, int b, int info = 0)
         {
@@ -47,6 +48,21 @@ namespace root
         public List<Node> getChildren()
         {
             return m_children;
+        }
+
+        public int getRadius()
+        {
+            return radius;
+        }
+
+        public int getX()
+        {
+            return x;
+        }
+
+        public int getY()
+        {
+            return y;
         }
     }
 }

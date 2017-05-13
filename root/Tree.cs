@@ -112,5 +112,21 @@ namespace root
         {
 
         }
+
+        public Node getNodeByCoordinates(int px, int py, Node node)
+        {
+            if (px >= node.getX() - node.getRadius() && px <= node.getX() + node.getRadius() && py >= node.getY() - node.getRadius() && py <= node.getY() + node.getRadius())
+            {
+                return node;
+            }
+            List<Node> chil = node.getChildren();
+            foreach (Node child in chil)
+            {
+                Node a = getNodeByCoordinates(px, py, child);
+                if (a != null)
+                    return a;
+            }
+            return null;
+        }
     }
 }
