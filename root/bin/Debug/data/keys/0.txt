@@ -1,0 +1,2 @@
+C Print from Standard Input
+cprintstdin

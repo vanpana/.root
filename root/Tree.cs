@@ -28,18 +28,19 @@ namespace root
         private Node m_root;
         private int addFlag = 0;
         private int keyFlag = 0;
-        int nodes = 7;
+        public int nodes = 0;
+        private string username;
 
         public void TestInit()
         {
-            m_root.add(new Node(130, 20, 1, m_root, new List<Node>(10)));
-            m_root.add(new Node(200, 30, 2, m_root, new List<Node>(10)));
+            //m_root.add(new Node(130, 20, 1, m_root, new List<Node>(10)));
+            //m_root.add(new Node(200, 30, 2, m_root, new List<Node>(10)));
             //Node parrent = getNode(1, m_root);
             //Node n2 = new Node(250, 50, 3, getNode(1, m_root), new List<Node>(10));
-            addChild(1, new Node(60, 50, 3, getNode(1, m_root), new List<Node>(10)));
-            addChild(1, new Node(130, 70, 4, getNode(1, m_root), new List<Node>(10)));
-            addChild(1, new Node(160, 79, 5, getNode(1, m_root), new List<Node>(10)));
-            addChild(2, new Node(200, 91, 6, getNode(2, m_root), new List<Node>(10)));
+            //addChild(1, new Node(60, 50, 3, getNode(1, m_root), new List<Node>(10)));
+            //addChild(1, new Node(130, 70, 4, getNode(1, m_root), new List<Node>(10)));
+            //addChild(1, new Node(160, 79, 5, getNode(1, m_root), new List<Node>(10)));
+            //addChild(2, new Node(200, 91, 6, getNode(2, m_root), new List<Node>(10)));
         }
 
         public Tree()
@@ -51,6 +52,23 @@ namespace root
         {
             InitializeComponent();
             m_root = root;
+            drawNode(m_root);
+            TestInit();
+        }
+
+        public Tree(string user)
+        {
+            InitializeComponent();
+            username = user;
+            TestInit();
+        }
+
+        public Tree(Node root, string user)
+        {
+            InitializeComponent();
+            username = user;
+            m_root = root;
+            drawNode(m_root);
             TestInit();
         }
 
@@ -207,6 +225,10 @@ namespace root
             //MessageBox.Show("add workded");
             MenuItem m = (MenuItem) sender;
             addFlag = 1;
+            NewNode NodeDiag = new NewNode(nodes);
+            NodeDiag.ShowDialog();
+
+
         }
 
 
@@ -243,6 +265,7 @@ namespace root
                             node.getY().ToString() + ' ' + node.getState().ToString();
             }
             System.IO.StreamWriter write = new System.IO.StreamWriter(path, true);
+           // MessageBox.Show(path);
             write.WriteLine(writeText);
             write.Close();
 
@@ -261,6 +284,7 @@ namespace root
         private void readFromFile(string path)
         {
             nodeCreate = false;
+            nodes = 0;
             this.Invalidate();
 
 
@@ -287,6 +311,7 @@ namespace root
                         Node n = new Node(x, y, key, getNode(parent, m_root), new List<Node>());
                         n.setState(status);
                         addChild(parent, n);
+                        nodes++;
                         drawLineBetweenNodes(n, getNode(parent, m_root));
                         drawNode(getNode(parent, m_root));
                         drawNode(n);
@@ -295,16 +320,32 @@ namespace root
             }
         }
 
+        public void Save(string path)
+        {
+            System.IO.StreamWriter write = new System.IO.StreamWriter(path);
+            write.Close();
+            writeToFile(path, getRoot());
+
+        }
+
+        public void Load(string path)
+        {
+            readFromFile(path);
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            System.IO.StreamWriter write = new System.IO.StreamWriter("../../data.txt");
+            string path = "data/users/" + username + "/" + username + ".txt";
+            //MessageBox.Show(path);
+            System.IO.StreamWriter write = new System.IO.StreamWriter(path);
             write.Close();
-            writeToFile("../../" + textBox1.Text + ".txt", getRoot());
+            writeToFile(path, getRoot());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            readFromFile("../../" + textBox1.Text + ".txt");
+            string path = "data/users/" + username + "/" + username + ".txt";
+            readFromFile(path);
         }
     }
 }

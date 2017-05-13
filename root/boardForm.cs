@@ -104,5 +104,28 @@ namespace root
                 hf.Show();
             }
         }
+
+        private void graphButton_Click(object sender, EventArgs e)
+        {
+            string path = "data/users/" + username + "/" + username + ".txt";
+            if(!File.Exists(path))
+            {
+                FileStream f = File.Create(path);
+                f.Close();
+                Tree t = new Tree();
+                t.Load("data/keys/Defaul.txt");
+                t.Show();
+                t.Save(path);
+                
+                
+            }
+            else
+            {
+                //Tree t = new Tree(new Node(200, 10, -1, null, new List<Node>()));
+                Tree t = new Tree(username);
+                t.Load(path);
+                t.Show();
+            }
+        }
     }
 }
