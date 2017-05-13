@@ -1,3 +1,0 @@
-C Print the n-th argument from commandline
-cprintnth
-13.05.2017

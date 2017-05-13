@@ -1,3 +1,0 @@
-C Print the arguments from cmdline backwards
-cprintntbackw
-13.05.2017

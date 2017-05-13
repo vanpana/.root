@@ -1,2 +1,0 @@
-C Print from Console
-cprintcmdline

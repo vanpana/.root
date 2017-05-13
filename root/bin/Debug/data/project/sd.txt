@@ -1,5 +1,0 @@
-For this task, you'll give X command arguments (the last one being N, an integer) and you have to print the Nth argument.
-
-For example, if you have: ./myprogram i am awesome 2
-you'll print: am
-Upload only .zip archives!
