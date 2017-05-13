@@ -127,6 +127,7 @@ namespace root
                 Lecture l = new Lecture();
                 l.codeName = codeName;
                 l.pathFile = "data/" + type + "/" + codeName + ".txt";
+                l.title = name;
                 l.Show();
             }
 
@@ -136,6 +137,7 @@ namespace root
                 au.codeName = codeName;
                 au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
                 //au.pathFile = "data/" + type + "/" + codeName + ".txt";
+                au.title = name;
                 au.Show();
             }
         }
