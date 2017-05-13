@@ -11,18 +11,21 @@ using System.Windows.Forms;
 namespace root
 {
 
-
+    enum States
+    {
+        AVAILABLE, UNAVAILABLE, ON_PROGRES
+    }
 
     public partial class Tree : Form
     {
         
-        private Node n1 = new Node(50, 50);
-        private Node n2 = new Node(160, 150);
-        private Node n3 = new Node(302, 100);
         private List<Node> lst = new List<Node>();
 
 
         private Node m_root;
+        private int addFlag = 0;
+        private int keyFlag = 0;
+        int nodes = 7;
 
         public void TestInit()
         {
@@ -65,20 +68,27 @@ namespace root
         private void drawNode(Node a)
         {
             Graphics g = this.CreateGraphics();
-            
-            Pen p = new Pen(Brushes.Red);
+            Brush p = Brushes.Red;
+            if (a.getState() == 0)
+                p = Brushes.Green;
+            if (a.getState() == 1)
+                p = Brushes.Gray;
+            if (a.getState() == 2)
+                p = Brushes.Yellow;
+            int rad = a.getRadius();
 
-            g.FillEllipse(Brushes.Red, new RectangleF(a.x - 10, a.y - 10, 20, 20));
+            g.FillEllipse(p, new RectangleF(a.x - rad, a.y - rad, rad * 2, rad * 2));
         }
 
         public void printInfo(Node root)
         {
-            drawNode(root);
+            
             foreach (Node child in root.getChildren())
             {
                 drawLineBetweenNodes(root, child);
                 printInfo(child);
             }
+            drawNode(root);
         }
 
         public Node getNode(int key, Node node)
@@ -111,6 +121,103 @@ namespace root
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Tree_MouseDown(object sender, MouseEventArgs e)
+        {
+            Node a = getNodeByCoordinates(e.X, e.Y, getRoot());
+
+            switch (e.Button)
+            {
+                case MouseButtons.Right:
+                    {
+                        if (a != null)
+                        {
+                            int state = a.getState();
+                            a.setState((state + 1) % 3);
+                            if (a.getState() == (int)States.AVAILABLE)
+                            {
+                                foreach (Node chile in a.getChildren())
+                                {
+                                    chile.setState((int)States.ON_PROGRES);
+                                    drawNode(chile);
+                                }
+                            }
+                            drawNode(a);
+                            break;
+                        }
+                        break;
+                    }
+                case MouseButtons.Left:
+                    {
+                        //MessageBox.Show("left\ny:" + e.X.ToString() + "\ny: " + e.Y.ToString());
+
+                        if(a == null)
+                        {
+                            if (addFlag == 1)
+                            {
+                                //MessageBox.Show("flag worked");
+                                Node parrent = getNode(keyFlag, getRoot());
+                                Node n = new Node(e.X, e.Y, nodes, parrent, new List<Node>());
+                                n.setState((int)States.UNAVAILABLE);
+                                nodes++;
+                                addChild(keyFlag, n);
+                                
+                                drawLineBetweenNodes(n, parrent);
+                                drawNode(parrent);
+                                drawNode(n);
+                                addFlag = 0;
+                            }
+                        }
+
+                        if (a != null)
+                        {
+                            if (addFlag == 0)
+                            {
+                                ContextMenu c = new ContextMenu();
+                                MenuItem it1 = new MenuItem("Add", menu_Add_Click);
+                                c.MenuItems.Add(it1);
+                                c.MenuItems.Add("view");
+                                c.Show(this, e.Location);
+                                keyFlag = a.getKey();
+
+
+                                if (addFlag == 1)
+                                {
+                                    //MessageBox.Show("click worked");
+
+                                }
+                            }
+                        }
+                        break;
+                    }
+            }
+            
+        }
+
+        void menu_Add_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("add workded");
+            MenuItem m = (MenuItem)sender;
+            addFlag = 1;
+
+        }
+
+
+        public Node getNodeByCoordinates(int px, int py, Node node)
+        {
+            if (px >= node.getX() - node.getRadius() && px <= node.getX() + node.getRadius() && py >= node.getY() - node.getRadius() && py <= node.getY() + node.getRadius())
+            {
+                return node;
+            }
+            List<Node> chil = node.getChildren();
+            foreach (Node child in chil)
+            {
+                Node a = getNodeByCoordinates(px, py, child);
+                if (a != null)
+                    return a;
+            }
+            return null;
         }
     }
 }

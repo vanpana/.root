@@ -38,6 +38,7 @@
             this.Name = "Tree";
             this.Text = "Tree";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Tree_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tree_MouseDown);
             this.ResumeLayout(false);
 
         }
