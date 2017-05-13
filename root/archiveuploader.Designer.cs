@@ -64,6 +64,7 @@
             // 
             // uploadButton
             // 
+            this.uploadButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.uploadButton.Location = new System.Drawing.Point(298, 351);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(75, 23);
@@ -97,6 +98,7 @@
             this.Controls.Add(this.projectsummary);
             this.Name = "archiveuploader";
             this.Text = "project_name";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.archiveuploader_FormClosing);
             this.Load += new System.EventHandler(this.archiveuploader_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
