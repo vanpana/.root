@@ -18,3 +18,4 @@ C:\Users\Corina\Documents\GitHub\.root\root\obj\Debug\root.Form1.resources
 C:\Users\Corina\Documents\GitHub\.root\root\obj\Debug\root.Properties.Resources.resources
 C:\Users\Corina\Documents\GitHub\.root\root\obj\Debug\root.Tree.resources
 C:\Users\Corina\Documents\GitHub\.root\root\obj\Debug\root.csproj.GenerateResource.Cache
+C:\Users\Corina\Documents\GitHub\.root\root\obj\Debug\root.PreviewWindow.resources

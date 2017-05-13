@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace root
 {
 
-    enum States
+    public enum States
     {
         AVAILABLE, UNAVAILABLE, ON_PROGRES
     }
@@ -177,7 +177,8 @@ namespace root
                                 ContextMenu c = new ContextMenu();
                                 MenuItem it1 = new MenuItem("Add", menu_Add_Click);
                                 c.MenuItems.Add(it1);
-                                c.MenuItems.Add("view");
+                                MenuItem it2 = new MenuItem("View", menu_View_Click);
+                                c.MenuItems.Add(it2);
                                 c.Show(this, e.Location);
                                 keyFlag = a.getKey();
 
@@ -194,6 +195,13 @@ namespace root
             }
             
         }
+
+        void menu_View_Click(object sender, EventArgs e)
+        {
+            PreviewWindow pw = new PreviewWindow(getNode(keyFlag, getRoot()));
+            pw.ShowDialog();
+        }
+
 
         void menu_Add_Click(object sender, EventArgs e)
         {
