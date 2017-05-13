@@ -25,7 +25,7 @@ namespace root
 
         private void sendHelp_Click(object sender, EventArgs e)
         {
-            string path = "data/users/" + usrn + "/help/" + codename + "-helpby-" + boardForm.username + ".txt";
+            string path = "data/users/" + usrn + "/help/" + codename + "-helpby-" + boardForm.username;
             File.WriteAllText(path,hintBox.Text);
             this.Close();
         }

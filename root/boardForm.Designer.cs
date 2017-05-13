@@ -34,6 +34,7 @@
             this.graphButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.helpButton = new System.Windows.Forms.Button();
+            this.yourHelpsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sideBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topBar)).BeginInit();
             this.SuspendLayout();
@@ -92,11 +93,22 @@
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
+            // yourHelpsButton
+            // 
+            this.yourHelpsButton.Location = new System.Drawing.Point(297, 1);
+            this.yourHelpsButton.Name = "yourHelpsButton";
+            this.yourHelpsButton.Size = new System.Drawing.Size(45, 45);
+            this.yourHelpsButton.TabIndex = 6;
+            this.yourHelpsButton.Text = "button1";
+            this.yourHelpsButton.UseVisualStyleBackColor = true;
+            this.yourHelpsButton.Click += new System.EventHandler(this.yourHelpsButton_Click);
+            // 
             // boardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 296);
+            this.Controls.Add(this.yourHelpsButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.graphButton);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.Button graphButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Button yourHelpsButton;
     }
 }

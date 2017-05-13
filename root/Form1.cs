@@ -19,7 +19,7 @@ namespace root
 
         private void button1_Click(object sender, EventArgs e)
         {
-            boardForm bf = new boardForm("tpaius");
+            boardForm bf = new boardForm("teopaius");
             bf.Show();
         }
     }

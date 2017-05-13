@@ -15,7 +15,11 @@ namespace root
     {
         string[,] help = new string[20,4];
         public static string username;
-        
+
+        public static string[] filePaths;
+        public static string[] fileTitles;
+
+
         string[,] parsefile(string path)
         {
             string[,] parsed = new string[20, 4];
@@ -77,6 +81,28 @@ namespace root
 
             hintWindow hw = new hintWindow(help[index, 0], help[index, 1], help[index, 2], help[index, 3]);
             hw.Show();
+        }
+
+        private void yourHelpsButton_Click(object sender, EventArgs e)
+        {
+            filePaths = Directory.GetFiles("data/users/" + username + "/help/");
+            if (filePaths.Length == 0)
+                MessageBox.Show("No help yet!");
+            else
+            {
+                helpFeedback hf = new helpFeedback();
+                fileTitles = new string[filePaths.Length];
+
+                for (int i = 0; i < filePaths.Length; i++)
+                {
+                    string[] temp = filePaths[i].Split('/');
+                    boardForm.fileTitles[i] = temp[temp.Length - 1];
+                    MessageBox.Show(fileTitles[i].ToString());
+                    hf.helpBox.Items.Add(fileTitles[i]);
+                }
+
+                hf.Show();
+            }
         }
     }
 }

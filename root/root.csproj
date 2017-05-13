@@ -57,6 +57,12 @@
     <Compile Include="boardForm.Designer.cs">
       <DependentUpon>boardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="helpFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpFeedback.Designer.cs">
+      <DependentUpon>helpFeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="hintWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="boardForm.resx">
       <DependentUpon>boardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="helpFeedback.resx">
+      <DependentUpon>helpFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hintWindow.resx">
       <DependentUpon>hintWindow.cs</DependentUpon>
