@@ -9,3 +9,15 @@ C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.exe
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.pdb
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.archiveuploader.resources
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Login.resources
+D:\C#\New folder\.root\root\bin\Debug\root.exe.config
+D:\C#\New folder\.root\root\obj\Debug\root.exe
+D:\C#\New folder\.root\root\obj\Debug\root.pdb
+D:\C#\New folder\.root\root\bin\Debug\root.exe
+D:\C#\New folder\.root\root\bin\Debug\root.pdb
+D:\C#\New folder\.root\root\obj\Debug\root.csprojResolveAssemblyReference.cache
+D:\C#\New folder\.root\root\obj\Debug\root.archiveuploader.resources
+D:\C#\New folder\.root\root\obj\Debug\root.Form1.resources
+D:\C#\New folder\.root\root\obj\Debug\root.Lecture.resources
+D:\C#\New folder\.root\root\obj\Debug\root.Login.resources
+D:\C#\New folder\.root\root\obj\Debug\root.Properties.Resources.resources
+D:\C#\New folder\.root\root\obj\Debug\root.csproj.GenerateResource.Cache
