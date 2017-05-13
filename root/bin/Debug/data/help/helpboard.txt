@@ -1,4 +1,0 @@
-vanpana,2,Implement a sorting algorithm,projectsorting
-teopaius,2,Implement backtracking,projectbt
-pufcorina,1,Graph Algoritm,lecturegraph
-vanpana,2,Implement backtracking,projectbt
