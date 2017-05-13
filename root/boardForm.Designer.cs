@@ -73,6 +73,7 @@
             this.graphButton.TabIndex = 3;
             this.graphButton.Text = "button1";
             this.graphButton.UseVisualStyleBackColor = true;
+            this.graphButton.Click += new System.EventHandler(this.graphButton_Click);
             // 
             // exitButton
             // 
