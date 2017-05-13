@@ -28,13 +28,13 @@
 
 # Build results
 
-[Dd]ebug/
+root/[Dd]ebug/
 
-[Dd]ebugPublic/
+root/[Dd]ebugPublic/
 
-[Rr]elease/
+root/[Rr]elease/
 
-[Rr]eleases/
+root/[Rr]eleases/
 
 x64/
 
@@ -42,17 +42,17 @@ x86/
 
 bld/
 
-[Bb]in/
+root/[Bb]in/
 
-[Oo]bj/
+root/[Oo]bj/
 
-[Ll]og/
+root/[Ll]og/
 
 
 
 # Visual Studio 2015 cache/options directory
 
-.vs/
+root/.vs/
 
 # Uncomment if you have tasks that create the project's static files in wwwroot
 
