@@ -217,7 +217,18 @@ namespace root
         void menu_View_Click(object sender, EventArgs e)
         {
             PreviewWindow pw = new PreviewWindow(getNode(keyFlag, getRoot()));
-            pw.ShowDialog();
+            if (pw.ShowDialog() == DialogResult.OK)
+            {
+
+                Node a = getNode(keyFlag, getRoot());
+                a.setState(0);
+                drawNode(a);
+                foreach (Node chile in a.getChildren())
+                {
+                    chile.setState((int)States.ON_PROGRES);
+                    drawNode(chile);
+                }
+            }
         }
 
 

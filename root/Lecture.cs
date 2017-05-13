@@ -43,6 +43,7 @@ namespace root
                 FileStream f = File.Create("data/help/helpboard.txt");
                 f.Close();
             }
+
                
 
             string temp = boardForm.username + ",1," + title + "," + codeName;
