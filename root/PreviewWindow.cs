@@ -136,6 +136,7 @@ namespace root
                     Lecture l = new Lecture();
                     l.codeName = codeName;
                     l.pathFile = "data/" + type + "/" + codeName + ".txt";
+                    l.title = name;
                     l.Show();
                 }
 
