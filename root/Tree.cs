@@ -46,6 +46,7 @@ namespace root
         public Tree()
         {
             InitializeComponent();
+
         }
 
         public Tree(Node root)

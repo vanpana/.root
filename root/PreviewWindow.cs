@@ -61,7 +61,7 @@ namespace root
             {
                 filePath = "data/users/" + boardForm.username + "/keys/" + n.getKey().ToString() + ".txt";
             }
-            string[] parsed = parseFile(filePath);
+           string[] parsed = parseFile(filePath);
 
             name = parsed[0];
             codeName = parsed[1];
@@ -105,7 +105,6 @@ namespace root
             descriptionContainerPath = "data/" + type + "/" + codeName + ".txt";
             textBox1.Text = File.ReadAllText(descriptionContainerPath);
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -125,10 +124,19 @@ namespace root
         {
             if (nod.getState() == (int)States.UNAVAILABLE)
             {
+
                 MessageBox.Show("this node is not available yet");
+
+                Lecture l = new Lecture();
+                l.codeName = codeName;
+                l.pathFile = "data/" + type + "/" + codeName + ".txt";
+                l.title = name;
+                l.Show();
+
             }
             else
             {
+
                 if (type == "lecture")
                 {
                     Lecture l = new Lecture();
@@ -145,12 +153,20 @@ namespace root
                     //au.pathFile = "data/" + type + "/" + codeName + ".txt";
                     DialogResult res = au.ShowDialog();
                     //MessageBox.Show(res.ToString());
+                    au.title = name;
                     if (au.ShowDialog() == DialogResult.OK)
                     {
                         //MessageBox.Show("second ok");
                         ok = true;
                     }
                 }
+                archiveuploader au = new archiveuploader();
+                au.codeName = codeName;
+                au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
+                //au.pathFile = "data/" + type + "/" + codeName + ".txt";
+                au.title = name;
+                au.Show();
+
             }
         }
 
