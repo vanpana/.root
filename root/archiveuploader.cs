@@ -14,6 +14,10 @@ namespace root
 {
     public partial class archiveuploader : Form
     {
+        public string pathFile;
+        public string codeName;
+        public string title;
+
         public string[] parseFile(string path)
         {
             string[] parsed = new string[3];
@@ -61,7 +65,7 @@ namespace root
             string[] parsed = new string[3];
             try
             {
-                parsed = parseFile("data/project1.txt");
+                parsed = parseFile(pathFile);
             }
             catch (Exception exc)
             {
@@ -73,7 +77,7 @@ namespace root
             this.projectsummary.Text = parsed[1];
             this.dueDateLabel.Text = "Due: " + parsed[2];
 
-            if (File.Exists("data/project1.txt"))
+            if (File.Exists("data/users/" + boardForm.username + "/uploaded/" + codeName + ".zip"))
                 this.statusLabel.Text = "Status: Uploaded";
 
             DateTime today = DateTime.Now;

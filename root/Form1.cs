@@ -45,8 +45,8 @@ namespace root
 
         private void lectureButton_Click(object sender, EventArgs e)
         {
-            NewNode n = new NewNode();
-            n.ShowDialog();
+            Tree t = new Tree(new Node(160,10,-1,null,new List<Node>()));
+            t.Show();
         }
     }
 }
