@@ -14,6 +14,7 @@ namespace root
     public partial class boardForm : Form
     {
         string[,] help = new string[20,4];
+        public static string username;
         
         string[,] parsefile(string path)
         {
@@ -26,7 +27,6 @@ namespace root
             try
             {   // Open the text file using a stream reader.
                 StreamReader file = new StreamReader(path);
-                string line;
                 string[] split;
                 while ((split = file.ReadLine().Split(',')) != null)
                 {
@@ -54,6 +54,7 @@ namespace root
         public boardForm(string username)
         {
             InitializeComponent();
+            boardForm.username = username;
 
             help = parsefile("data/help/helpboard.txt");
 
@@ -65,6 +66,17 @@ namespace root
         private void boardForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            string curItem = helpBox.SelectedItem.ToString();
+
+            // Find the string in ListBox2.
+            int index = helpBox.FindString(curItem);
+
+            hintWindow hw = new hintWindow(help[index, 0], help[index, 1], help[index, 2], help[index, 3]);
+            hw.Show();
         }
     }
 }

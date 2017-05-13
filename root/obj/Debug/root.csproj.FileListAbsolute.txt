@@ -8,3 +8,4 @@ C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Properties.R
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.csproj.GenerateResource.Cache
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.exe
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.pdb
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.hintWindow.resources

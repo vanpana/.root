@@ -90,6 +90,7 @@
             this.helpButton.TabIndex = 5;
             this.helpButton.Text = "button1";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // boardForm
             // 
