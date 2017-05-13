@@ -30,15 +30,24 @@ namespace root
             int counter = 0;
             try
             {   // Open the text file using a stream reader.
-                StreamReader file = new StreamReader(path);
+
+                FileInfo fi1 = new FileInfo("data/help/helpboard.txt");
+                MessageBox.Show(Form1.IsFileLocked(fi1).ToString());
+
                 string[] split;
-                while ((split = file.ReadLine().Split(',')) != null)
+                using (StreamReader sr = new StreamReader("data/help/helpboard.txt"))
                 {
-                    for (int i = 0; i < 4; i++)
-                        parsed[counter, i] = split[i];
-                    counter++;
+                    while ((split = sr.ReadLine().Split(',')) != null)
+                    {
+                      
+                        for (int i = 0; i < 4; i++)
+                            parsed[counter, i] = split[i];
+                        counter++;
+                        MessageBox.Show(counter.ToString());
+                    }
                 }
-                file.Close();
+
+                MessageBox.Show(Form1.IsFileLocked(fi1).ToString());
             }
             catch (Exception e)
             {
@@ -60,16 +69,21 @@ namespace root
             InitializeComponent();
             boardForm.username = username;
 
-            help = parsefile("data/help/helpboard.txt");
 
-            for (int i = 0; i < 10; i++)
-                if (help[i, 0] != username && help[i,0] != "")
-                    helpBox.Items.Add(helpText(help[i,0], help[i,1], help[i,2]));
+            if (new FileInfo("data/help/helpboard.txt").Length != 0)
+            {
+                help = parsefile("data/help/helpboard.txt");
+
+                for (int i = 0; i < 10; i++)
+                    if (help[i, 0] != username && help[i, 0] != "")
+                        helpBox.Items.Add(helpText(help[i, 0], help[i, 1], help[i, 2]));
+            }
+            
         }
 
         private void boardForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void helpButton_Click(object sender, EventArgs e)
@@ -107,6 +121,8 @@ namespace root
 
         private void graphButton_Click(object sender, EventArgs e)
         {
+            
+
             string path = "data/users/" + username + "/" + username + ".txt";
             if(!File.Exists(path))
             {
@@ -116,6 +132,7 @@ namespace root
                 t.Load("data/keys/Defaul.txt");
                 t.Show();
                 t.Save(path);
+                this.Close();
                 
                 
             }
@@ -125,6 +142,7 @@ namespace root
                 Tree t = new Tree(username);
                 t.Load(path);
                 t.Show();
+                this.Close();
             }
         }
     }

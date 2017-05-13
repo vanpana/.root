@@ -16,6 +16,7 @@ namespace root
         public Lecture()
         {
             InitializeComponent();
+
         }
         public string pathFile;
         public string codeName;
@@ -38,13 +39,19 @@ namespace root
         private void helpButton_Click(object sender, EventArgs e)
         {
             if (!File.Exists("data/help/helpboard.txt"))
-                File.Create("data/help/helpboard.txt");
+            {
+                FileStream f = File.Create("data/help/helpboard.txt");
+                f.Close();
+            }
+               
 
             string temp = boardForm.username + ",1," + title + "," + codeName;
 
-            StreamWriter appender = File.AppendText("data/help/helpboard.txt");
-            appender.Write(temp + "\n");
-            appender.Close();
+            using (StreamWriter appender = File.AppendText("data/help/helpboard.txt"))
+            {
+                appender.Write(temp + "\r\n");
+            }
+            
         }
     }
 }
