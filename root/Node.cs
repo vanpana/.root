@@ -16,6 +16,16 @@ namespace root
         private int state=1;
         private int radius = 10;
 
+        public Node()
+        {
+
+        }
+
+        public Node getParrent()
+        {
+            return m_parent;
+        }
+
         public Node(int a, int b, int info = 0)
         {
             x = a;
