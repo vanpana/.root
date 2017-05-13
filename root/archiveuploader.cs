@@ -17,6 +17,8 @@ namespace root
         public string pathFile;
         public string codeName;
         public string title;
+        private bool ok;
+
 
         public string[] parseFile(string path)
         {
@@ -92,7 +94,9 @@ namespace root
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
-            openArchivePath.ShowDialog();
+            if (openArchivePath.ShowDialog() == DialogResult.OK)
+                ok = true;
+
         }
 
         private void openArchivePath_FileOk(object sender, CancelEventArgs e)
@@ -108,6 +112,18 @@ namespace root
                 File.Copy(openArchivePath.FileName, "data/project1.zip");
                 this.statusLabel.Text = "Status: Uplaoded";
             }
+        }
+
+        private void archiveuploader_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            if (ok)
+            {
+                //MessageBox.Show("first ok");
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+                this.DialogResult = DialogResult.No;
         }
     }
 }

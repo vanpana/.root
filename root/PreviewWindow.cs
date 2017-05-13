@@ -18,6 +18,7 @@ namespace root
         string codeName;
         string name;
         string type;
+        bool ok;
 
         public PreviewWindow()
         {
@@ -122,22 +123,43 @@ namespace root
 
         private void runForm_Click(object sender, EventArgs e)
         {
-            if (type == "lecture")
+            if (nod.getState() == (int)States.UNAVAILABLE)
             {
-                Lecture l = new Lecture();
-                l.codeName = codeName;
-                l.pathFile = "data/" + type + "/" + codeName + ".txt";
-                l.Show();
+                MessageBox.Show("this node is not available yet");
             }
+            else
+            {
+                if (type == "lecture")
+                {
+                    Lecture l = new Lecture();
+                    l.codeName = codeName;
+                    l.pathFile = "data/" + type + "/" + codeName + ".txt";
+                    l.Show();
+                }
 
-            else if (type == "project")
-            {
-                archiveuploader au = new archiveuploader();
-                au.codeName = codeName;
-                au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
-                //au.pathFile = "data/" + type + "/" + codeName + ".txt";
-                au.Show();
+                else if (type == "project")
+                {
+                    archiveuploader au = new archiveuploader();
+                    au.codeName = codeName;
+                    au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
+                    //au.pathFile = "data/" + type + "/" + codeName + ".txt";
+                    DialogResult res = au.ShowDialog();
+                    //MessageBox.Show(res.ToString());
+                    if (au.ShowDialog() == DialogResult.OK)
+                    {
+                        //MessageBox.Show("second ok");
+                        ok = true;
+                    }
+                }
             }
+        }
+
+        private void PreviewWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ok)
+                this.DialogResult = DialogResult.OK;
+            else
+                this.DialogResult = DialogResult.No;
         }
     }
 }
