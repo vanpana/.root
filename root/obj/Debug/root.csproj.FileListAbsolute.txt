@@ -26,3 +26,5 @@ C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.helpFeedback
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.hintWindow.resources
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Lecture.resources
 C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.NewNode.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.PreviewWindow.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Tree.resources
