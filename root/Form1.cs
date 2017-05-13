@@ -24,5 +24,11 @@ namespace root
             Login log = new Login();
             log.Show();
         }
+
+        private void lectureButton_Click(object sender, EventArgs e)
+        {
+            NewNode n = new NewNode();
+            n.ShowDialog();
+        }
     }
 }
