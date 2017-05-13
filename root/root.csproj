@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="boardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="boardForm.Designer.cs">
+      <DependentUpon>boardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,24 @@
     </Compile>
     <Compile Include="archiveuploader.Designer.cs">
       <DependentUpon>archiveuploader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="helpFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpFeedback.Designer.cs">
+      <DependentUpon>helpFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hintWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hintWindow.Designer.cs">
+      <DependentUpon>hintWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lecture.Designer.cs">
+      <DependentUpon>Lecture.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -89,8 +113,20 @@
     <EmbeddedResource Include="archiveuploader.resx">
       <DependentUpon>archiveuploader.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="boardForm.resx">
+      <DependentUpon>boardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="helpFeedback.resx">
+      <DependentUpon>helpFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hintWindow.resx">
+      <DependentUpon>hintWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lecture.resx">
+      <DependentUpon>Lecture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

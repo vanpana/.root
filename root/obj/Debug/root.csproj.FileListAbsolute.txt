@@ -21,3 +21,8 @@ D:\C#\New folder\.root\root\obj\Debug\root.Login.resources
 D:\C#\New folder\.root\root\obj\Debug\root.Properties.Resources.resources
 D:\C#\New folder\.root\root\obj\Debug\root.csproj.GenerateResource.Cache
 D:\C#\New folder\.root\root\obj\Debug\root.NewNode.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.boardForm.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.helpFeedback.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.hintWindow.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.Lecture.resources
+C:\Users\Dorinel Panaite\Documents\GitHub\.root\root\obj\Debug\root.NewNode.resources

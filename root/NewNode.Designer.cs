@@ -108,6 +108,7 @@
             this.Controls.Add(this.typeCheckedListBox);
             this.Name = "NewNode";
             this.Text = "NewNode";
+            this.Load += new System.EventHandler(this.NewNode_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

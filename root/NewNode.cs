@@ -97,5 +97,10 @@ namespace root
         {
             codeNameTextBox.Text = "";
         }
+
+        private void NewNode_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,7 +49,17 @@ namespace root
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (usrnEdit.Text != "" && passEdit.Text != "")
-                MessageBox.Show("You've logged in successfully yay!");
+            {
+                boardForm bf = new boardForm(usrnEdit.Text);
+                if (!Directory.Exists("data/users/" + usrnEdit.Text))
+                {
+                    Directory.CreateDirectory("data/users/" + usrnEdit.Text);
+                    Directory.CreateDirectory("data/users/" + usrnEdit.Text + "/help");
+                    Directory.CreateDirectory("data/users/" + usrnEdit.Text + "/uploaded");
+                }
+                    
+                bf.Show();
+            }
         }
     }
 }

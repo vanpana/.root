@@ -51,6 +51,7 @@
             this.helpButton.TabIndex = 1;
             this.helpButton.Text = "Help";
             this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // lectureRichTextBox
             // 

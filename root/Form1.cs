@@ -17,6 +17,24 @@ namespace root
         public Form1()
         {
             InitializeComponent();
+
+            if (!Directory.Exists("data"))
+                Directory.CreateDirectory("data");
+
+            if (!Directory.Exists("data/help"))
+                Directory.CreateDirectory("data/help");
+
+            if (!Directory.Exists("data/users"))
+                Directory.CreateDirectory("data/users");
+
+            if (!Directory.Exists("data/lecture"))
+                Directory.CreateDirectory("data/lecture");
+
+            if (!Directory.Exists("data/project"))
+                Directory.CreateDirectory("data/project");
+
+            if (!Directory.Exists("data/keys"))
+                Directory.CreateDirectory("data/keys");
         }
 
         private void button1_Click(object sender, EventArgs e)
