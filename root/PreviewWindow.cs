@@ -127,12 +127,6 @@ namespace root
 
                 MessageBox.Show("this node is not available yet");
 
-                Lecture l = new Lecture();
-                l.codeName = codeName;
-                l.pathFile = "data/" + type + "/" + codeName + ".txt";
-                l.title = name;
-                l.Show();
-
             }
             else
             {
@@ -160,13 +154,6 @@ namespace root
                         ok = true;
                     }
                 }
-                archiveuploader au = new archiveuploader();
-                au.codeName = codeName;
-                au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
-                //au.pathFile = "data/" + type + "/" + codeName + ".txt";
-                au.title = name;
-                au.Show();
-
             }
         }
 
