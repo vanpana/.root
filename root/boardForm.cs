@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace root
+{
+    public partial class boardForm : Form
+    {
+        string[,] help = new string[20,4];
+        
+        string[,] parsefile(string path)
+        {
+            string[,] parsed = new string[20, 4];
+
+            for (int j = 0; j < 20; j++)
+                parsed[j, 0] = "";
+
+            int counter = 0;
+            try
+            {   // Open the text file using a stream reader.
+                StreamReader file = new StreamReader(path);
+                string line;
+                string[] split;
+                while ((split = file.ReadLine().Split(',')) != null)
+                {
+                    for (int i = 0; i < 4; i++)
+                        parsed[counter, i] = split[i];
+                    counter++;
+                }
+                file.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+            }
+            return parsed;
+        }
+
+        string helpText(string usrn, string helptype, string name)
+        {
+            if (helptype == "1")
+                return name + ", lecture, posted by " + usrn;
+            return name + ", project, posted by " + usrn;
+        }
+
+        public boardForm(string username)
+        {
+            InitializeComponent();
+
+            help = parsefile("data/help/helpboard.txt");
+
+            for (int i = 0; i < 10; i++)
+                if (help[i, 0] != username && help[i,0] != "")
+                    helpBox.Items.Add(helpText(help[i,0], help[i,1], help[i,2]));
+        }
+
+        private void boardForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
