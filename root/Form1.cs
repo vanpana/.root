@@ -49,6 +49,9 @@ namespace root
         public Form1()
         {
             InitializeComponent();
+            //this.BackColor = Color.Transparent;
+            this.TransparencyKey = Color.Turquoise;
+            this.BackColor = Color.Turquoise;
 
             if (!Directory.Exists("data"))
                 Directory.CreateDirectory("data");
@@ -73,6 +76,7 @@ namespace root
         {
             Login log = new Login();
             log.Show();
+            this.Hide();
         }
 
         private void lectureButton_Click(object sender, EventArgs e)
