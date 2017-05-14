@@ -57,6 +57,9 @@ namespace root
         public Form1()
         {
             InitializeComponent();
+            //this.BackColor = Color.Transparent;
+            this.TransparencyKey = Color.Turquoise;
+            this.BackColor = Color.Turquoise;
 
             iA = Image.FromFile("data/node green.png");
             iU = Image.FromFile("data/node gray.png");
@@ -111,6 +114,7 @@ namespace root
         {
             Login log = new Login();
             log.Show();
+            this.Hide();
         }
 
         private void lectureButton_Click(object sender, EventArgs e)

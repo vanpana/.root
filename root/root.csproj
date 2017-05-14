@@ -171,6 +171,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Roboto-Bold.ttf" />
+    <None Include="Roboto-Light.ttf" />
+    <None Include="Roboto-Medium.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

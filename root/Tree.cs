@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
@@ -24,6 +25,24 @@ namespace root
 
     public partial class Tree : Form
     {
+        public static boardForm bf;
+        public Image SetImageOpacity(Image image, float opacity)
+        {
+            Bitmap bmp = new Bitmap(image.Width, image.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.Matrix33 = opacity;
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default,
+                                                  ColorAdjustType.Bitmap);
+                g.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height),
+                                   0, 0, image.Width, image.Height,
+                                   GraphicsUnit.Pixel, attributes);
+            }
+            return bmp;
+        }
+
         private List<Node> lst = new List<Node>();
 
 
@@ -44,8 +63,8 @@ namespace root
             //addChild(1, new Node(160, 79, 5, getNode(1, m_root), new List<Node>(10)));
             //addChild(2, new Node(200, 91, 6, getNode(2, m_root), new List<Node>(10)));
 
-            this.DoubleBuffered = true;
-            //printInfo(m_root);
+
+            this.BackgroundImage = SetImageOpacity(this.BackgroundImage, 0.15F);
         }
 
         public Tree()
@@ -364,6 +383,7 @@ namespace root
             readFromFile(path);
         }
 
+
         private void Tree_FormClosing(object sender, FormClosingEventArgs e)
         {
             string path = "data/users/" + username + "/" + username + ".txt";
@@ -372,6 +392,14 @@ namespace root
             write.Close();
             writeToFile(path, getRoot());
            // MessageBox.Show("aaaa");
+           
+           
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            bf.Show();
+
         }
     }
 }

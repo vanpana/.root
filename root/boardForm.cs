@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,22 @@ namespace root
         public static string[] filePaths;
         public static string[] fileTitles;
 
+        public Image SetImageOpacity(Image image, float opacity)
+        {
+            Bitmap bmp = new Bitmap(image.Width, image.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.Matrix33 = opacity;
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default,
+                                                  ColorAdjustType.Bitmap);
+                g.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height),
+                                   0, 0, image.Width, image.Height,
+                                   GraphicsUnit.Pixel, attributes);
+            }
+            return bmp;
+        }
 
         string[,] parsefile(string path)
         {
@@ -67,6 +84,10 @@ namespace root
         public boardForm(string username)
         {
             InitializeComponent();
+
+            topBar.Image = SetImageOpacity(topBar.Image, 0.15F);
+            sideBar.Image = SetImageOpacity(sideBar.Image, 0.15F);
+
             boardForm.username = username;
 
 
@@ -104,7 +125,7 @@ namespace root
                 MessageBox.Show("No help yet!");
             else
             {
-                helpFeedback hf = new helpFeedback();
+                helpFeedback hf = new helpFeedback(this);
                 fileTitles = new string[filePaths.Length];
 
                 for (int i = 0; i < filePaths.Length; i++)
@@ -116,6 +137,7 @@ namespace root
                 }
 
                 hf.Show();
+                this.Hide();
             }
         }
 
@@ -140,10 +162,18 @@ namespace root
             {
                 //Tree t = new Tree(new Node(200, 10, -1, null, new List<Node>()));
                 Tree t = new Tree(username);
+                Tree.bf = this;
                 t.Load(path);
                 t.Show();
-                this.Close();
+                this.Hide();
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Login l = new Login();
+            l.Show();
+            this.Close();
         }
     }
 }
