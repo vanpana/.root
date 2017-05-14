@@ -88,7 +88,7 @@ namespace root
             string[] parsed = new string[3];
             try
             {
-                MessageBox.Show(pathFile);
+                //MessageBox.Show(pathFile);
                 parsed = parseFile(pathFile);
             }
             catch (Exception exc)

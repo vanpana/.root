@@ -204,7 +204,7 @@ namespace root
                         {
                             //MessageBox.Show("flag worked");
                             Node parrent = getNode(keyFlag, getRoot());
-                                MessageBox.Show(e.X.ToString() + "----" + e.Y.ToString());
+                                //MessageBox.Show(e.X.ToString() + "----" + e.Y.ToString());
                             Node n = new Node(e.X, e.Y, nodes, parrent, new List<Node>());
                             n.setState((int) States.UNAVAILABLE);
                             nodes++;

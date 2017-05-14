@@ -132,7 +132,7 @@ namespace root
                 {
                     string[] temp = filePaths[i].Split('/');
                     boardForm.fileTitles[i] = temp[temp.Length - 1];
-                    MessageBox.Show(fileTitles[i].ToString());
+                    //MessageBox.Show(fileTitles[i].ToString());
                     hf.helpBox.Items.Add(fileTitles[i]);
                 }
 
@@ -155,7 +155,7 @@ namespace root
                 t.Load("data/keys/Defaul.txt");
                 t.Show();
                 t.Save(path);
-                this.Close();
+                this.Hide();
                 
                 
             }
