@@ -56,7 +56,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(250, 371);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 2;
@@ -71,6 +71,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Tree";
             this.Text = "Tree";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tree_FormClosing);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Tree_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tree_MouseDown);
             this.ResumeLayout(false);

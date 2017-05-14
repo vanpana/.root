@@ -12,8 +12,15 @@ using System.Windows.Forms;
 
 namespace root
 {
+    
+
     public partial class Form1 : Form
     {
+        public static Image iA;
+        public static Image iU;
+        public static Image iO;
+        public static Image i;
+
         public static Boolean IsFileLocked(FileInfo file)
         {
             FileStream stream = null;
@@ -51,14 +58,27 @@ namespace root
         {
             InitializeComponent();
 
+            iA = Image.FromFile("data/node green.png");
+            iU = Image.FromFile("data/node gray.png");
+            iO = Image.FromFile("data/node yellow.png");
+
+
             if (!Directory.Exists("data"))
                 Directory.CreateDirectory("data");
 
             if (!Directory.Exists("data/help"))
                 Directory.CreateDirectory("data/help");
 
+            if(!File.Exists("data/help/helpboard.txt"))
+            {
+                FileStream f = File.Create("data/help/helpboard.txt");
+                f.Close();
+            }
+
             if (!Directory.Exists("data/users"))
                 Directory.CreateDirectory("data/users");
+
+
 
             if (!Directory.Exists("data/lecture"))
                 Directory.CreateDirectory("data/lecture");

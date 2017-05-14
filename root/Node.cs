@@ -14,7 +14,7 @@ namespace root
         private Node m_parent;
         private List<Node> m_children = new List<Node>(100);
         private int state = 1;
-        private int radius = 10;
+        private int radius = 20;
         private int m_parentKey;
 
         public Node()

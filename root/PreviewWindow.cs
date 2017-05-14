@@ -65,6 +65,7 @@ namespace root
 
             name = parsed[0];
             codeName = parsed[1];
+            MessageBox.Show(parsed[1]);
             type = "project";
             if (parsed[2] == "none")
                 type = "lecture";
