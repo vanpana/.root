@@ -67,7 +67,6 @@ namespace root
             string[] parsed = new string[3];
             try
             {
-                MessageBox.Show(pathFile);
                 parsed = parseFile(pathFile);
             }
             catch (Exception exc)
@@ -101,7 +100,6 @@ namespace root
 
         private void openArchivePath_FileOk(object sender, CancelEventArgs e)
         {
-            //MessageBox.Show(openArchivePath.FileName);
             string archivePath = openArchivePath.FileName;
             if (!Path.GetExtension(archivePath).Equals(".zip"))
                 MessageBox.Show("File is not a zip!");

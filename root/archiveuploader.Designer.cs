@@ -38,36 +38,45 @@
             // 
             // projectsummary
             // 
-            this.projectsummary.Location = new System.Drawing.Point(12, 22);
+            this.projectsummary.BackColor = System.Drawing.SystemColors.Control;
+            this.projectsummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.projectsummary.Location = new System.Drawing.Point(16, 27);
+            this.projectsummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.projectsummary.Multiline = true;
             this.projectsummary.Name = "projectsummary";
-            this.projectsummary.Size = new System.Drawing.Size(361, 315);
+            this.projectsummary.ReadOnly = true;
+            this.projectsummary.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.projectsummary.Size = new System.Drawing.Size(480, 387);
             this.projectsummary.TabIndex = 0;
+            this.projectsummary.TabStop = false;
             // 
             // projectsummaryLabel
             // 
             this.projectsummaryLabel.AutoSize = true;
-            this.projectsummaryLabel.Location = new System.Drawing.Point(12, 6);
+            this.projectsummaryLabel.Location = new System.Drawing.Point(16, 7);
+            this.projectsummaryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.projectsummaryLabel.Name = "projectsummaryLabel";
-            this.projectsummaryLabel.Size = new System.Drawing.Size(86, 13);
+            this.projectsummaryLabel.Size = new System.Drawing.Size(115, 17);
             this.projectsummaryLabel.TabIndex = 1;
             this.projectsummaryLabel.Text = "Project Summary";
             // 
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(12, 351);
+            this.statusLabel.Location = new System.Drawing.Point(16, 432);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(124, 13);
+            this.statusLabel.Size = new System.Drawing.Size(164, 17);
             this.statusLabel.TabIndex = 2;
             this.statusLabel.Text = "Status: Not uploaded yet";
             // 
             // uploadButton
             // 
             this.uploadButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.uploadButton.Location = new System.Drawing.Point(298, 351);
+            this.uploadButton.Location = new System.Drawing.Point(397, 432);
+            this.uploadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(75, 23);
+            this.uploadButton.Size = new System.Drawing.Size(100, 28);
             this.uploadButton.TabIndex = 3;
             this.uploadButton.Text = "Upload!";
             this.uploadButton.UseVisualStyleBackColor = true;
@@ -76,9 +85,10 @@
             // dueDateLabel
             // 
             this.dueDateLabel.AutoSize = true;
-            this.dueDateLabel.Location = new System.Drawing.Point(12, 372);
+            this.dueDateLabel.Location = new System.Drawing.Point(16, 458);
+            this.dueDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dueDateLabel.Name = "dueDateLabel";
-            this.dueDateLabel.Size = new System.Drawing.Size(54, 13);
+            this.dueDateLabel.Size = new System.Drawing.Size(70, 17);
             this.dueDateLabel.TabIndex = 4;
             this.dueDateLabel.Text = "Due: date";
             // 
@@ -88,14 +98,15 @@
             // 
             // archiveuploader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 394);
+            this.ClientSize = new System.Drawing.Size(513, 485);
             this.Controls.Add(this.dueDateLabel);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.projectsummaryLabel);
             this.Controls.Add(this.projectsummary);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "archiveuploader";
             this.Text = "project_name";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.archiveuploader_FormClosing);

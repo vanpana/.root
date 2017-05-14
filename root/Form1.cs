@@ -46,6 +46,7 @@ namespace root
             //file is not locked
             return false;
         }
+
         public Form1()
         {
             InitializeComponent();
@@ -67,6 +68,23 @@ namespace root
 
             if (!Directory.Exists("data/keys"))
                 Directory.CreateDirectory("data/keys");
+
+            if (!File.Exists("data/keys/Defaul.txt"))
+            {
+                string[] data =
+                {
+                    "-2 -1 200 10 1", "-1 0 114 89 1", "-1 1 193 96 1", "1 3 147 168 1", "1 4 232 170 1",
+                    "4 5 191 240 1", "-1 2 290 94 1"
+                };
+
+                using (StreamWriter outputFile = new StreamWriter("data/keys" + @"/Defaul.txt"))
+                {
+                    foreach (string line in data)
+                    {
+                        outputFile.WriteLine(line);
+                    }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,7 +95,7 @@ namespace root
 
         private void lectureButton_Click(object sender, EventArgs e)
         {
-            Tree t = new Tree(new Node(160,10,-1,null,new List<Node>()));
+            Tree t = new Tree(new Node(160, 10, -1, null, new List<Node>()));
             t.Show();
         }
     }
