@@ -158,6 +158,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "archiveuploader";
             this.Text = "project_name";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.archiveuploader_FormClosing);
             this.Load += new System.EventHandler(this.archiveuploader_Load);
             ((System.ComponentModel.ISupportInitialize)(this.topBar)).EndInit();

@@ -151,6 +151,7 @@ namespace root
                 FileStream f = File.Create(path);
                 f.Close();
                 Tree t = new Tree();
+                Tree.bf = this;
                 t.Load("data/keys/Defaul.txt");
                 t.Show();
                 t.Save(path);

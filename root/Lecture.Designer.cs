@@ -88,6 +88,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lecture";
             this.Text = "Lecture";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Lecture_Load);
             this.ResumeLayout(false);
 
