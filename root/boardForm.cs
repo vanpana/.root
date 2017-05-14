@@ -125,7 +125,7 @@ namespace root
                 MessageBox.Show("No help yet!");
             else
             {
-                helpFeedback hf = new helpFeedback();
+                helpFeedback hf = new helpFeedback(this);
                 fileTitles = new string[filePaths.Length];
 
                 for (int i = 0; i < filePaths.Length; i++)
@@ -137,7 +137,7 @@ namespace root
                 }
 
                 hf.Show();
-                this.Close();
+                this.Hide();
             }
         }
 
@@ -162,9 +162,10 @@ namespace root
             {
                 //Tree t = new Tree(new Node(200, 10, -1, null, new List<Node>()));
                 Tree t = new Tree(username);
+                Tree.bf = this;
                 t.Load(path);
                 t.Show();
-                this.Close();
+                this.Hide();
             }
         }
 

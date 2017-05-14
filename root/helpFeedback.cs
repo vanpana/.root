@@ -14,10 +14,14 @@ namespace root
 {
     public partial class helpFeedback : Form
     {
-        public helpFeedback()
+        boardForm bf;
+
+        public helpFeedback(boardForm bf)
         {
             InitializeComponent();
             this.BackgroundImage = SetImageOpacity(this.BackgroundImage, 0.15F);
+            this.bf = bf;
+
         }
 
         public Image SetImageOpacity(Image image, float opacity)
@@ -50,9 +54,9 @@ namespace root
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            helpFeedback hf = new helpFeedback();
-            hf.Show();
             this.Close();
+            bf.Show();
+            
         }
     }
 }

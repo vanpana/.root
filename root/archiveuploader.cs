@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -50,6 +51,23 @@ namespace root
             return parsed;
         }
 
+        public Image SetImageOpacity(Image image, float opacity)
+        {
+            Bitmap bmp = new Bitmap(image.Width, image.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                ColorMatrix matrix = new ColorMatrix();
+                matrix.Matrix33 = opacity;
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default,
+                                                  ColorAdjustType.Bitmap);
+                g.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height),
+                                   0, 0, image.Width, image.Height,
+                                   GraphicsUnit.Pixel, attributes);
+            }
+            return bmp;
+        }
+
         public DateTime parseDate(string date)
         {
             string[] ints = date.Split('.');
@@ -64,6 +82,9 @@ namespace root
 
         private void archiveuploader_Load(object sender, EventArgs e)
         {
+
+            this.BackgroundImage = SetImageOpacity(this.BackgroundImage, 0.30F);
+
             string[] parsed = new string[3];
             try
             {
@@ -124,6 +145,11 @@ namespace root
             }
             else
                 this.DialogResult = DialogResult.No;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

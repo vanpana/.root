@@ -42,9 +42,9 @@
             // 
             // sideBar
             // 
-            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.sideBar.Image = ((System.Drawing.Image)(resources.GetObject("sideBar.Image")));
-            this.sideBar.Location = new System.Drawing.Point(1, 1);
+            this.sideBar.Location = new System.Drawing.Point(0, 0);
             this.sideBar.Name = "sideBar";
             this.sideBar.Size = new System.Drawing.Size(45, 306);
             this.sideBar.TabIndex = 0;
@@ -52,9 +52,9 @@
             // 
             // topBar
             // 
-            this.topBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.topBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.topBar.Image = ((System.Drawing.Image)(resources.GetObject("topBar.Image")));
-            this.topBar.Location = new System.Drawing.Point(41, 1);
+            this.topBar.Location = new System.Drawing.Point(40, 0);
             this.topBar.Name = "topBar";
             this.topBar.Size = new System.Drawing.Size(455, 45);
             this.topBar.TabIndex = 1;
@@ -62,18 +62,18 @@
             // 
             // helpBox
             // 
-            this.helpBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(148)))), ((int)(((byte)(99)))));
+            this.helpBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(215)))), ((int)(((byte)(211)))));
             this.helpBox.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpBox.FormattingEnabled = true;
             this.helpBox.ItemHeight = 15;
-            this.helpBox.Location = new System.Drawing.Point(46, 45);
+            this.helpBox.Location = new System.Drawing.Point(43, 45);
             this.helpBox.Name = "helpBox";
             this.helpBox.Size = new System.Drawing.Size(449, 244);
             this.helpBox.TabIndex = 2;
             // 
             // graphButton
             // 
-            this.graphButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.graphButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.graphButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("graphButton.BackgroundImage")));
             this.graphButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.graphButton.FlatAppearance.BorderSize = 0;
@@ -89,7 +89,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.exitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitButton.BackgroundImage")));
             this.exitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.exitButton.FlatAppearance.BorderSize = 0;
@@ -105,7 +105,7 @@
             // 
             // helpButton
             // 
-            this.helpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.helpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.helpButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("helpButton.BackgroundImage")));
             this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.helpButton.FlatAppearance.BorderSize = 0;
@@ -121,7 +121,7 @@
             // 
             // yourHelpsButton
             // 
-            this.yourHelpsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(100)))), ((int)(((byte)(30)))));
+            this.yourHelpsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.yourHelpsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("yourHelpsButton.BackgroundImage")));
             this.yourHelpsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.yourHelpsButton.FlatAppearance.BorderSize = 0;
