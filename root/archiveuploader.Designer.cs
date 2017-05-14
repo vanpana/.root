@@ -34,6 +34,10 @@
             this.uploadButton = new System.Windows.Forms.Button();
             this.dueDateLabel = new System.Windows.Forms.Label();
             this.openArchivePath = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
+            this.topBar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.topBar)).BeginInit();
             this.SuspendLayout();
             // 
             // projectsummary
@@ -41,7 +45,7 @@
             this.projectsummary.BackColor = System.Drawing.SystemColors.Control;
             this.projectsummary.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.projectsummary.Location = new System.Drawing.Point(16, 27);
-            this.projectsummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.projectsummary.Margin = new System.Windows.Forms.Padding(4);
             this.projectsummary.Multiline = true;
             this.projectsummary.Name = "projectsummary";
             this.projectsummary.ReadOnly = true;
@@ -74,7 +78,7 @@
             // 
             this.uploadButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.uploadButton.Location = new System.Drawing.Point(397, 432);
-            this.uploadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uploadButton.Margin = new System.Windows.Forms.Padding(4);
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(100, 28);
             this.uploadButton.TabIndex = 3;
@@ -96,21 +100,51 @@
             // 
             this.openArchivePath.FileOk += new System.ComponentModel.CancelEventHandler(this.openArchivePath_FileOk);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(0, 0);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 6;
+            this.backButton.Text = "button1";
+            this.backButton.UseVisualStyleBackColor = true;
+            // 
+            // topBar
+            // 
+            this.topBar.Location = new System.Drawing.Point(8, 8);
+            this.topBar.Name = "topBar";
+            this.topBar.Size = new System.Drawing.Size(100, 50);
+            this.topBar.TabIndex = 7;
+            this.topBar.TabStop = false;
+            // 
             // archiveuploader
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 485);
+            this.Controls.Add(this.topBar);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dueDateLabel);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.projectsummaryLabel);
             this.Controls.Add(this.projectsummary);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "archiveuploader";
             this.Text = "project_name";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.archiveuploader_FormClosing);
             this.Load += new System.EventHandler(this.archiveuploader_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.topBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +158,8 @@
         private System.Windows.Forms.Button uploadButton;
         private System.Windows.Forms.Label dueDateLabel;
         private System.Windows.Forms.OpenFileDialog openArchivePath;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.PictureBox topBar;
     }
 }
