@@ -79,6 +79,7 @@ namespace root
                 }
                     
                 bf.Show();
+                this.Close();
             }
         }
 
