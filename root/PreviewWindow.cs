@@ -105,6 +105,7 @@ namespace root
             descriptionContainerPath = "data/" + type + "/" + codeName + ".txt";
             textBox1.Text = File.ReadAllText(descriptionContainerPath);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -146,7 +147,6 @@ namespace root
                     au.codeName = codeName;
                     au.pathFile = "data/keys/" + nod.getKey().ToString() + ".txt";
                     //au.pathFile = "data/" + type + "/" + codeName + ".txt";
-                    DialogResult res = au.ShowDialog();
                     //MessageBox.Show(res.ToString());
                     au.title = name;
                     if (au.ShowDialog() == DialogResult.OK)

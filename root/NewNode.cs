@@ -80,46 +80,52 @@ namespace root
 
         private void addNewButton_Click(object sender, EventArgs e)
         {
-            if (path.Substring(path.Length - 4) == ".txt")
+            if (path == null)
             {
-                codeName = codeNameTextBox.Text;
-                switch (type)
-                {
-                    case "lecture":
-                        if (System.IO.File.Exists("data/lecture/" + codeName + ".txt"))
-                            System.IO.File.Delete("data/lecture/" + codeName + ".txt");
-                        System.IO.File.Copy(path, "data/lecture/" + codeName + ".txt");
-                        break;
-                    case "project":
-                        if (System.IO.File.Exists("data/project/" + codeName + ".txt"))
-                            System.IO.File.Delete("data/project/" + codeName + ".txt");
-                        System.IO.File.Copy(path, "data/project/" + codeName + ".txt");
-                        break;
-                }
-                if(!Directory.Exists("data/users/" + boardForm.username + "/keys"))
-                {
-                    Directory.CreateDirectory("data/users/" + boardForm.username + "/keys");
-                }
-                string fpath = "data/users/" + boardForm.username + "/keys/" + key.ToString() + ".txt";
-                if (!File.Exists(fpath))
-                {
-                    FileStream s = File.Create(fpath);
-                    s.Close();
-                }
-                StreamWriter wr = new StreamWriter(fpath);
-                wr.Write(fileNameTextBox.Text + "\r\n");
-                wr.Write(codeNameTextBox.Text + "\r\n");
-                if(typeCheckedListBox.SelectedIndex == 1)
-                {
-                    wr.Write(textBox1.Text + "\r\n");
-                }
-                wr.Close();
-                // TODO
+                MessageBox.Show("No path has been chosen.");
             }
             else
-                MessageBox.Show("Try a text file!");
-            this.Close();
-            
+            {
+                if (path.Substring(path.Length - 4) == ".txt")
+                {
+                    codeName = codeNameTextBox.Text;
+                    switch (type)
+                    {
+                        case "lecture":
+                            if (System.IO.File.Exists("data/lecture/" + codeName + ".txt"))
+                                System.IO.File.Delete("data/lecture/" + codeName + ".txt");
+                            System.IO.File.Copy(path, "data/lecture/" + codeName + ".txt");
+                            break;
+                        case "project":
+                            if (System.IO.File.Exists("data/project/" + codeName + ".txt"))
+                                System.IO.File.Delete("data/project/" + codeName + ".txt");
+                            System.IO.File.Copy(path, "data/project/" + codeName + ".txt");
+                            break;
+                    }
+                    if (!Directory.Exists("data/users/" + boardForm.username + "/keys"))
+                    {
+                        Directory.CreateDirectory("data/users/" + boardForm.username + "/keys");
+                    }
+                    string fpath = "data/users/" + boardForm.username + "/keys/" + key.ToString() + ".txt";
+                    if (!File.Exists(fpath))
+                    {
+                        FileStream s = File.Create(fpath);
+                        s.Close();
+                    }
+                    StreamWriter wr = new StreamWriter(fpath);
+                    wr.Write(fileNameTextBox.Text + "\r\n");
+                    wr.Write(codeNameTextBox.Text + "\r\n");
+                    if (typeCheckedListBox.SelectedIndex == 1)
+                    {
+                        wr.Write(textBox1.Text + "\r\n");
+                    }
+                    wr.Close();
+                    // TODO
+                }
+                else
+                    MessageBox.Show("Try a text file!");
+                this.Close();
+            }
         }
 
         private void codeNameTextBox_Click(object sender, EventArgs e)
