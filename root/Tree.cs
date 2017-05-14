@@ -68,7 +68,6 @@ namespace root
         public Tree()
         {
             InitializeComponent();
-
         }
 
         public Tree(Node root)
@@ -171,14 +170,14 @@ namespace root
 
             switch (e.Button)
             {
-                case MouseButtons.Right:
+                case MouseButtons.Left:
                 {
                     if (a != null)
                     {
                         int state = a.getState();
-                        a.setState((state + 1) % 3);
-                        if (a.getState() == (int) States.AVAILABLE)
+                        if (a.getState() == (int) States.ON_PROGRES)
                         {
+                            a.setState((int) States.AVAILABLE);
                             foreach (Node chile in a.getChildren())
                             {
                                 chile.setState((int) States.ON_PROGRES);
@@ -190,7 +189,7 @@ namespace root
                     }
                     break;
                 }
-                case MouseButtons.Left:
+                case MouseButtons.Right:
                 {
                     //MessageBox.Show("left\ny:" + e.X.ToString() + "\ny: " + e.Y.ToString());
 
@@ -241,13 +240,12 @@ namespace root
             PreviewWindow pw = new PreviewWindow(getNode(keyFlag, getRoot()));
             if (pw.ShowDialog() == DialogResult.OK)
             {
-
                 Node a = getNode(keyFlag, getRoot());
                 a.setState(0);
                 drawNode(a);
                 foreach (Node chile in a.getChildren())
                 {
-                    chile.setState((int)States.ON_PROGRES);
+                    chile.setState((int) States.ON_PROGRES);
                     drawNode(chile);
                 }
             }
@@ -261,8 +259,6 @@ namespace root
             addFlag = 1;
             NewNode NodeDiag = new NewNode(nodes);
             NodeDiag.ShowDialog();
-
-
         }
 
 
@@ -299,7 +295,7 @@ namespace root
                             node.getY().ToString() + ' ' + node.getState().ToString();
             }
             System.IO.StreamWriter write = new System.IO.StreamWriter(path, true);
-           // MessageBox.Show(path);
+            // MessageBox.Show(path);
             write.WriteLine(writeText);
             write.Close();
 
@@ -327,7 +323,7 @@ namespace root
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string[] values = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    string[] values = line.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                     int parent = Convert.ToInt32(values[0]);
                     int key = Convert.ToInt32(values[1]);
                     int x = Convert.ToInt32(values[2]);
@@ -337,7 +333,7 @@ namespace root
                     if (parent == -2)
                     {
                         m_root = new Node(x, y, key, null, new List<Node>());
-                        m_root.setState((int) States.AVAILABLE);
+                        m_root.setState((int) States.ON_PROGRES);
                         drawNode(m_root);
                     }
                     else
@@ -359,7 +355,6 @@ namespace root
             System.IO.StreamWriter write = new System.IO.StreamWriter(path);
             write.Close();
             writeToFile(path, getRoot());
-
         }
 
         public void Load(string path)
