@@ -137,6 +137,7 @@ namespace root
                 }
 
                 hf.Show();
+                this.Close();
             }
         }
 
