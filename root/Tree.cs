@@ -62,12 +62,15 @@ namespace root
             //addChild(1, new Node(130, 70, 4, getNode(1, m_root), new List<Node>(10)));
             //addChild(1, new Node(160, 79, 5, getNode(1, m_root), new List<Node>(10)));
             //addChild(2, new Node(200, 91, 6, getNode(2, m_root), new List<Node>(10)));
+
+
             this.BackgroundImage = SetImageOpacity(this.BackgroundImage, 0.15F);
         }
 
         public Tree()
         {
             InitializeComponent();
+            TestInit();
         }
 
         public Tree(Node root)
@@ -112,15 +115,16 @@ namespace root
         {
             Graphics g = this.CreateGraphics();
             Brush p = Brushes.Red;
+            
             if (a.getState() == 0)
-                p = Brushes.Green;
+                Form1.i = Form1.iA;
             if (a.getState() == 1)
-                p = Brushes.Gray;
+                Form1.i = Form1.iU;
             if (a.getState() == 2)
-                p = Brushes.Yellow;
+                Form1.i = Form1.iO;
             int rad = a.getRadius();
-
-            g.FillEllipse(p, new RectangleF(a.x - rad, a.y - rad, rad * 2, rad * 2));
+            g.DrawImage(Form1.i, new RectangleF(a.x - rad, a.y - rad, rad * 2, rad * 2));
+            //g.FillEllipse(p, new RectangleF(a.x - rad, a.y - rad, rad * 2, rad * 2));
         }
 
         public void printInfo(Node root)
@@ -157,6 +161,7 @@ namespace root
 
         private void Tree_Paint(object sender, PaintEventArgs e)
         {
+            //this.Invalidate();
             printInfo(getRoot());
         }
 
@@ -199,6 +204,7 @@ namespace root
                         {
                             //MessageBox.Show("flag worked");
                             Node parrent = getNode(keyFlag, getRoot());
+                                MessageBox.Show(e.X.ToString() + "----" + e.Y.ToString());
                             Node n = new Node(e.X, e.Y, nodes, parrent, new List<Node>());
                             n.setState((int) States.UNAVAILABLE);
                             nodes++;
@@ -377,10 +383,23 @@ namespace root
             readFromFile(path);
         }
 
+
+        private void Tree_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string path = "data/users/" + username + "/" + username + ".txt";
+            //MessageBox.Show(path);
+            System.IO.StreamWriter write = new System.IO.StreamWriter(path);
+            write.Close();
+            writeToFile(path, getRoot());
+           // MessageBox.Show("aaaa");
+           
+           
+
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
             bf.Show();
+
         }
     }
 }

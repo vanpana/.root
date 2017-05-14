@@ -109,6 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "Tree";
             this.Text = "Tree";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tree_FormClosing);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Tree_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tree_MouseDown);
             this.ResumeLayout(false);
